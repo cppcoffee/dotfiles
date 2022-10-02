@@ -11,6 +11,7 @@ curl -L git.io/antigen > $home/.antigen/antigen.zsh
 # link files
 FILES=(
     .gitconfig
+    .zshrc
 )
 echo "Linking dotfile..."
 for FILE in ${FILES[@]}; do
