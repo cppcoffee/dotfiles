@@ -56,5 +56,3 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS"
 --color=info:#af87ff,prompt:#5fff87,pointer:#ff87d7,marker:#ff87d7,spinner:#ff87d7
 "
 
-. "$HOME/.cargo/env"
-

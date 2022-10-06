@@ -14,9 +14,18 @@
     dc = diff --cached
 
 [user]
-    name = sharp
-    email = cppcoffee@gmail.com
+	name = Xiaobo Liu
+	email = cppcoffee@gmail.com
 
 [core]
     editor = nvim
+	excludesfile = /Users/sharp/.gitignore_global
 
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/sharp/.stCommitMsg

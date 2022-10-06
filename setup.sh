@@ -21,6 +21,7 @@ done
 # link directory
 DIRS=(
     tmux
+    nvim
 )
 echo "Linking config dir..."
 for DIR in ${DIRS[@]}; do
