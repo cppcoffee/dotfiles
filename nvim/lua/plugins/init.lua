@@ -90,6 +90,7 @@ require('packer').startup({
                 'nvim-lua/plenary.nvim',
                 'nvim-telescope/telescope-github.nvim',
                 'nvim-telescope/telescope-packer.nvim',
+                'BurntSushi/ripgrep',
             },
             config = function()
                 require('plugins.telescope')

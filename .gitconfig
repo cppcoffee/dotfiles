@@ -1,17 +1,17 @@
 [alias]
-    au = add -u
-    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-    pr = pull --rebase origin master
-    ps = push
-    st = status
-    co = checkout
-    cb = checkout -b
-    br = branch
-    cm = commit -s -m
-    ca = commit --amend -s --no-edit
-    d = diff
-    ds = diff --staged
-    dc = diff --cached
+	au = add -u
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	pr = pull --rebase origin master
+	ps = push
+	st = status
+	co = checkout
+	cb = checkout -b
+	br = branch
+	cm = commit -s -m
+	ca = commit --amend -s --no-edit
+	d = diff
+	ds = diff --staged
+	dc = diff --cached
 
 [user]
 	name = Xiaobo Liu
