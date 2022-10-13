@@ -2,6 +2,7 @@ local map = require('utils').map
 
 -- Key bindings
 map('', '<c-a>', 'ggVG$"+y')
+map('', '<c-s>', ':w<cr>')
 
 map('v', '<c-c>', '"+y')
 map('v', '<tab>', '>gv')
@@ -18,9 +19,3 @@ map('c', '<c-h>', '<Left>')
 map('c', '<c-l>', '<Right>')
 map('c', '<c-b>', '<Left>')
 map('c', '<c-f>', '<Right>')
-
--- map('n', '<leader>w', ':w<CR>')
--- map('n', '<leader>c', ':close<CR>')
--- map('n', '<leader>t', ':NvimTreeToggle<CR>')
--- map('n', '<leader>h', '<c-w><Left>')
--- map('n', '<leader>l', '<c-w><Right>')
