@@ -30,3 +30,9 @@
 	trustExitCode = true
 [commit]
 	template = /Users/sharp/.stCommitMsg
+[sendemail]
+	smtpencryption = tls
+	smtpserver = smtp.gmail.com
+	smtpuser = cppcoffee@gmail.com
+	smtpserverport = 587
+
