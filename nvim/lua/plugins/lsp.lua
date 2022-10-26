@@ -8,7 +8,10 @@ local settings = {
     },
     servers = {
         eslint = {},
-        pylsp = {},
+        pyright = {
+            settings = {
+            },
+        },
         zk = {},
         jsonls = {},
         bashls = {},
