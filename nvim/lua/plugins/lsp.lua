@@ -1,3 +1,5 @@
+require("neodev").setup()
+
 local settings = {
     mappings = {
         gd = 'lua require"telescope.builtin".lsp_definitions()',
@@ -11,10 +13,8 @@ local settings = {
         jsonls = {},
         bashls = {},
         tsserver = {},
-        clojure_lsp = {},
         dockerls = {},
         jsonnet_ls = {},
-        zls = {},
         gopls = {
             settings = {
                 golsp = {
@@ -28,8 +28,18 @@ local settings = {
             },
         },
         clangd = {},
-        solc = {},
-        sumneko_lua = require('lua-dev').setup(),
+        sumneko_lua = {
+            settings = {
+                Lua = {
+                    completion = {
+                        callSnippet = "Replace",
+                    },
+                    -- format = {
+                    --   enable = true,
+                    -- }
+                }
+            }
+        },
         ['rust_analyzer@nightly'] = {
             settings = {
                 ['rust-analyzer'] = {
