@@ -10,6 +10,7 @@
 	br = branch
 	cm = commit -s -m
 	ca = commit --amend -s --no-edit
+	ms = merge --squash
 	d = diff
 	ds = diff --staged
 	dc = diff --cached
