@@ -14,7 +14,6 @@ alias vi=nvim
 alias vim=nvim
 alias g=git
 alias gti=git
-alias v=vagrant
 alias gist="gist -p"
 
 alias proxy="export all_proxy=socks5://127.0.0.1:7890"
