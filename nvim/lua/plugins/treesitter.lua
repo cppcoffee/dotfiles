@@ -23,7 +23,7 @@ require('nvim-treesitter.configs').setup({
             },
         },
     },
-    indent = { enable = true },
+    indent = { enable = false }, -- disable builtin indent module
     autopairs = { enable = true },
     rainbow = { enable = true },
     autotag = { enable = true },
