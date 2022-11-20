@@ -70,6 +70,7 @@ require('packer').startup({
             end,
         })
 
+        -- indent guide
         use({
             'lukas-reineke/indent-blankline.nvim',
             config = function()
@@ -84,6 +85,7 @@ require('packer').startup({
             end,
         })
 
+        -- file telescope
         use({
             'nvim-telescope/telescope.nvim',
             requires = {
@@ -105,6 +107,7 @@ require('packer').startup({
             end,
         })
 
+        -- file tree
         use({
             'kyazdani42/nvim-tree.lua',
             requires = 'kyazdani42/nvim-web-devicons',
@@ -113,6 +116,7 @@ require('packer').startup({
             end,
         })
 
+        -- git
         use({
             'lewis6991/gitsigns.nvim',
             requires = { 'nvim-lua/plenary.nvim' },
