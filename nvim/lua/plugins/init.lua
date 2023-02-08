@@ -22,7 +22,7 @@ require('packer').startup({
     },
     function(use)
         use('wbthomason/packer.nvim')
-        use('terryma/vim-multiple-cursors')
+        -- use('terryma/vim-multiple-cursors')
         use('wakatime/vim-wakatime')
         use('tpope/vim-fugitive')
         use('folke/which-key.nvim')
