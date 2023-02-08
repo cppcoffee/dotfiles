@@ -37,3 +37,5 @@
 	smtpuser = cppcoffee@gmail.com
 	smtpserverport = 587
 
+[credential]
+	helper = store
