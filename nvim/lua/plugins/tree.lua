@@ -58,7 +58,6 @@ require('nvim-tree').setup({
     hijack_netrw = true,
     update_cwd = true,
     -- focus_tree = false,
-    open_on_setup = true,
 })
 
 vim.api.nvim_create_autocmd('VimEnter', {
