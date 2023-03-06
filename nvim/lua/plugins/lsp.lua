@@ -31,12 +31,12 @@ local settings = {
             },
         },
         clangd = {},
-        sumneko_lua = {
+        lua_ls = {
             settings = {
                 Lua = {
-                    completion = {
-                        callSnippet = "Replace",
-                    },
+                    -- completion = {
+                    --     callSnippet = "Replace",
+                    -- },
                     -- format = {
                     --   enable = true,
                     -- }
