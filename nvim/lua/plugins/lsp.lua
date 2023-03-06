@@ -22,11 +22,20 @@ local settings = {
             settings = {
                 golsp = {
                     gofumpt = true,
-                    staticcheck = true,
+                    -- staticcheck = true,
                     useplaceholders = true,
                     codelenses = {
                         gc_details = true,
                     },
+                    hints = {
+                        rangeVariableTypes = true,
+                        parameterNames = true,
+                        constantValues = true,
+                        assignVariableTypes = true,
+                        compositeLiteralFields = true,
+                        compositeLiteralTypes = true,
+                        functionTypeParameters = true,
+                    }
                 },
             },
         },
