@@ -125,6 +125,15 @@ require('packer').startup({
             end,
         })
 
+        -- comment enhancement
+        use({
+            "folke/todo-comments.nvim",
+            requires = "nvim-lua/plenary.nvim",
+            config = function()
+                require("plugins.todo-comments")
+            end
+        })
+
         use({
             'github/copilot.vim',
             setup = function()
