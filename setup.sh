@@ -22,6 +22,7 @@ done
 DIRS=(
     tmux
     nvim
+    wezterm
 )
 echo "Linking config dir..."
 for DIR in ${DIRS[@]}; do

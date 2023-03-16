@@ -1,4 +1,12 @@
-local g = vim.g
-
-g.tokyonight_dark_sidebar = false
-g.tokyonight_dark_float = false
+return {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    init = function()
+        vim.cmd([[colorscheme tokyonight]])
+    end,
+    opts = {
+        style = 'night',
+        light_style = 'day'
+    },
+}

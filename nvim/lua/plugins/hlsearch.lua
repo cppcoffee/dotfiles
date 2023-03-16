@@ -1,5 +1,5 @@
 return {
-    'm-demare/hlargs.nvim',
+    'glepnir/hlsearch.nvim',
     event = 'BufRead',
     config = true,
 }
