@@ -1,3 +1,4 @@
+local map = require('utils').map
 return {
     'lewis6991/gitsigns.nvim',
     dependencies = { 'nvim-lua/plenary.nvim' },
@@ -17,8 +18,15 @@ return {
         },
         word_diff = false,
         current_line_blame = true,
-        linehl = false,
+        linehl = true,
         numhl = true,
         sign_priority = 6,
+        preview_config = {
+            border = 'rounded',
+        },
+        on_attach = function()
+            local gs = package.loaded.gitsigns
+            map('n', '<leader>p', gs.preview_hunk)
+        end
     }
 }

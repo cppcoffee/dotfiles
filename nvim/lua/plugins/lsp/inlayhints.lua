@@ -1,5 +1,6 @@
 return {
     'lvimuser/lsp-inlayhints.nvim',
+    enabled = false,
     init = function()
         vim.api.nvim_create_augroup("LspAttach_inlayhints", {})
         vim.api.nvim_create_autocmd("LspAttach", {

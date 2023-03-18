@@ -6,7 +6,7 @@ return {
         vim.cmd([[colorscheme tokyonight]])
     end,
     opts = {
-        style = 'night',
+        style = 'moon',
         light_style = 'day'
     },
 }

@@ -1,5 +1,4 @@
 -- Color scheme
-vim.cmd([[colorscheme tokyonight]])
 vim.o.termguicolors = true
 
 -- Leader key
@@ -31,14 +30,14 @@ vim.o.mouse = 'a'
 
 vim.o.number = true
 vim.o.cursorline = true
-vim.o.relativenumber = false
+vim.o.relativenumber = true
 vim.o.cursorcolumn = true
 vim.o.signcolumn = 'auto:1'
 -- vim.o.cmdheight = 0
 vim.opt.list = true
 -- vim.opt.listchars:append('eol:↴')
+vim.opt.fillchars:append { diff = "╱" }
 
--- vim.o.textwidth = 120
 vim.o.textwidth = 80
 vim.o.smartindent = true
 vim.o.autoindent = true

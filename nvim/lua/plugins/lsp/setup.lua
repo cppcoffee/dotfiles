@@ -6,21 +6,14 @@ return {
         'williamboman/mason.nvim',
         'williamboman/mason-lspconfig.nvim',
         'folke/lsp-colors.nvim',
-        'ray-x/lsp_signature.nvim',
         'nvim-telescope/telescope.nvim',
         'folke/neodev.nvim'
     },
     init = function()
-        -- global config for diagnostic
-        vim.diagnostic.config({
-            underline = true,
-            virtual_text = false,
-        })
-
-        local border = { '╭', '─', '╮', '│', '╯', '─', '╰', '│' }
-        vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = border })
-        vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help,
-            { border = border })
+        local rounded = { border = "rounded" }
+        vim.diagnostic.config({ float = rounded })
+        vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, rounded)
+        vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, rounded)
     end,
     opts = {
         mappings = {
@@ -31,10 +24,7 @@ return {
         },
         servers = {
             eslint = {},
-            pyright = {
-                settings = {
-                },
-            },
+            pyright = {},
             -- pylsp = {
             --     settings = {
             --         pylsp = {
@@ -58,6 +48,13 @@ return {
             --         }
             --     }
             -- },
+            yamlls = {
+                settings = {
+                    yaml = {
+                        keyOrdering = false
+                    }
+                }
+            },
             zk = {},
             jsonls = {},
             bashls = {},
