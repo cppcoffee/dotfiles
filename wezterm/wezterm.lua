@@ -10,6 +10,8 @@ wezterm.on('format-tab-title', function(tab)
 end)
 
 return {
+    initial_cols = 125,
+    initial_rows = 45,
     font = wezterm.font('Hack Nerd Font'),
     font_size = 12,
     colors = {
@@ -37,7 +39,7 @@ return {
         brightness = 1.4,
     },
     default_cursor_style = 'BlinkingBlock',
-    default_cwd = wezterm.home_dir .. '/Documents/workspace',
+    default_cwd = wezterm.home_dir .. '/workspace',
     clean_exit_codes = { 0, 1, 130 },
     -- exit_behavior = 'Close',
     keys = {
