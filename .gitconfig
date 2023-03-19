@@ -21,16 +21,18 @@
 
 [core]
     editor = nvim
-	excludesfile = /Users/sharp/.gitignore_global
+    excludesfile = ~/.config/git/ignore
 
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[commit]
-	template = /Users/sharp/.stCommitMsg
+[pager]
+    difftool = true
+[diff]
+    external = difft
+    tool = difftastic
+[difftool]
+    prompt = false
+[difftool "difftastic"]
+    cmd = difft "$LOCAL" "$REMOTE"
+
 [sendemail]
 	smtpencryption = tls
 	smtpserver = smtp.gmail.com
