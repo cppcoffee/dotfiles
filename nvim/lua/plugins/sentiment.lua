@@ -1,4 +1,5 @@
 return {
-    "utilyre/sentiment.nvim",
+    'utilyre/sentiment.nvim',
+    event = 'VeryLazy',
     config = true,
 }

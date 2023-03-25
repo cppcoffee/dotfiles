@@ -4,7 +4,7 @@ end
 
 return {
     'hrsh7th/nvim-cmp',
-    event = "InsertEnter",
+    event = 'InsertEnter',
     dependencies = {
         'hrsh7th/cmp-vsnip',
         'hrsh7th/cmp-nvim-lsp',
@@ -13,30 +13,13 @@ return {
         'hrsh7th/cmp-buffer',
         'onsails/lspkind-nvim',
         'windwp/nvim-autopairs',
+        'hrsh7th/cmp-cmdline',
     },
-    init = function()
-        local cmp = require('cmp')
-        local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-        cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done({ map_char = { tex = '' } }))
-        -- cmp.setup.cmdline(':', {
-        --     mapping = cmp.mapping.preset.cmdline(),
-        --     sources = cmp.config.sources({
-        --         { name = 'path' }
-        --     }, {
-        --         { name = 'cmdline' }
-        --     })
-        -- })
-        cmp.setup.cmdline({ '/', '?' }, {
-            mapping = cmp.mapping.preset.cmdline(),
-            sources = {
-                { name = 'buffer' }
-            }
-        })
-    end,
-    opts = function()
+    config = function()
         local cmp = require('cmp')
         local types = require('cmp.types')
-        return {
+        local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+        local opts = {
             formatting = {
                 format = function(entry, vim_item)
                     vim_item.kind = require('lspkind').presets.default[vim_item.kind] .. ' ' .. vim_item.kind
@@ -90,6 +73,7 @@ return {
                 { name = 'vsnip' },
             },
         }
+        cmp.setup(opts)
+        cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done({ map_char = { tex = '' } }))
     end,
 }
-

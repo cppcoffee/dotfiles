@@ -12,6 +12,7 @@ curl -L git.io/antigen > $home/.antigen/antigen.zsh
 FILES=(
     .gitconfig
     .zshrc
+    .Brewfile
 )
 echo "Linking dotfile..."
 for FILE in ${FILES[@]}; do

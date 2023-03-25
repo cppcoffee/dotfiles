@@ -1,6 +1,7 @@
 local map = require('utils').map
 return {
     'lewis6991/gitsigns.nvim',
+    event = 'VeryLazy',
     dependencies = { 'nvim-lua/plenary.nvim' },
     opts = {
         signs = {
@@ -27,6 +28,7 @@ return {
         on_attach = function()
             local gs = package.loaded.gitsigns
             map('n', '<leader>p', gs.preview_hunk)
+            map({ 'n', 'v' }, '<leader>hr', ':Gitsigns reset_hunk<CR>')
         end
     }
 }

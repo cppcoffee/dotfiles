@@ -2,9 +2,9 @@ local map = require('utils').map
 return {
     'nvim-telescope/telescope.nvim',
     -- keys = { '<leader>ff', '<leader>fg', '<leader>fb', ';' },
+    event = 'VeryLazy',
     dependencies = {
         'nvim-lua/plenary.nvim',
-        'nvim-telescope/telescope-github.nvim',
     },
     opts = {
         defaults = {
@@ -28,10 +28,9 @@ return {
         },
     },
     init = function()
-        require('telescope').load_extension('gh')
         map('n', '<leader>ff', '<cmd>Telescope find_files<cr>')
         map('n', '<leader>fg', '<cmd>Telescope live_grep<cr>')
-        -- map('n', '<c-o>', '<cmd>Telescope buffers<cr>')
+        map('n', '<leader>b', '<cmd>Telescope buffers<cr>')
         map('n', ';', '<cmd>Telescope commands<cr>')
     end,
 }

@@ -1,6 +1,7 @@
 return {
     'akinsho/bufferline.nvim',
-    enabled = true,
+    event = 'VeryLazy',
+    enabled = false,
     opts = {
         options = {
             show_buffer_icons = true,

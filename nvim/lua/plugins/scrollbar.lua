@@ -1,7 +1,8 @@
 return {
     'petertriho/nvim-scrollbar',
+    event = 'VeryLazy',
     opts = function()
-        local colors = require("tokyonight.colors").setup()
+        local colors = require('tokyonight.colors').setup()
         return {
             handle = {
                 cursor = false,
@@ -15,7 +16,7 @@ return {
                 Hint = { color = colors.hint },
                 Misc = { color = colors.purple },
             },
-            excluded_filetypes = { "NvimTree", "TelescopePrompt", "chatgpt" }
+            excluded_filetypes = { 'NvimTree', 'TelescopePrompt', 'chatgpt' }
         }
     end
 }

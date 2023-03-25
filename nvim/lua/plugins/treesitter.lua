@@ -1,7 +1,7 @@
 return {
     'nvim-treesitter/nvim-treesitter',
-    build = ":TSUpdate",
-    event = "BufRead",
+    build = ':TSUpdate',
+    event = 'VeryLazy',
     dependencies = {
         'nvim-treesitter/playground',
         'nvim-treesitter/nvim-treesitter-refactor',
