@@ -39,7 +39,7 @@ return {
         brightness = 1.4,
     },
     default_cursor_style = 'BlinkingBlock',
-    default_cwd = wezterm.home_dir .. '/workspace',
+    -- default_cwd = wezterm.home_dir .. '/workspace',
     clean_exit_codes = { 0, 1, 130 },
     -- exit_behavior = 'Close',
     keys = {
