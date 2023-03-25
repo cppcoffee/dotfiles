@@ -2,23 +2,18 @@ export EDITOR=nvim
 export GOPATH=$HOME/.go
 # export GOPROXY=https://goproxy.cn,direct
 
+export PYENV_ROOT="$HOME/.pyenv"
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+export PTPYTHON_CONFIG_HOME=~/.config/ptpython
+
 export CARGO_PATH=$HOME/.cargo
 
 export PATH="/opt/homebrew/sbin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin"
-export PATH="$CARGO_PATH/bin:$GOPATH/bin:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$CARGO_PATH/bin:$GOPATH/bin:$PYENV_ROOT/shims:$PATH"
+export PATH="$HOME/.local/bin:${HOME}/.krew/bin:$PATH"
 
-
-alias ll="ls -al"
-alias vi=nvim
-alias vim=nvim
-alias g=git
-alias gti=git
-alias gist="gist -p"
-
-alias proxy="export all_proxy=socks5://127.0.0.1:7890"
-alias noproxy="unset all_proxy"
-alias q=exit
+export XDG_CONFIG_HOME="$HOME/.config"
+export ZSH_HIGHLIGHT_MAXLENGTH=60
 
 source ~/.antigen/antigen.zsh
 
@@ -29,6 +24,7 @@ antigen bundle git
 antigen bundle fzf
 antigen bundle pyenv
 antigen bundle pip
+antigen bundle kubectl
 # antigen bundle tmux
 antigen bundle extract
 antigen bundle gitignore
@@ -42,10 +38,29 @@ antigen bundle z-shell/F-Sy-H --branch=main
 antigen bundle zsh-users/zsh-completions
 antigen bundle dracula/zsh
 antigen bundle dracula/zsh-syntax-highlighting
+antigen bundle Tarrasch/zsh-autoenv
 
 antigen apply
 
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LDFLAGS="-L/opt/homebrew/opt/zlib/lib -L/opt/homebrew/opt/openssl@3/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@3/include"
+
+alias vi=nvim
+alias vim=nvim
+alias la='exa -alF --icons'
+alias ls='exa -lF --icons'
+alias cat='bat --style=numbers'
+alias g=git
+alias gti=git
+alias proxy="export https_proxy=http://127.0.0.1:7890;export http_proxy=http://127.0.0.1:7890;export all_proxy=socks5://127.0.0.1:7890"
+alias noproxy="unset all_proxy https_proxy http_proxy"
+alias q=exit
+
+export GPG_TTY=$(tty)
 
 export FZF_COMPLETION_TRIGGER='~~'
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS"
@@ -56,4 +71,3 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS"
 --color=fg:-1,bg:-1,hl:#5fff87,fg+:-1,bg+:-1,hl+:#ffaf5f
 --color=info:#af87ff,prompt:#5fff87,pointer:#ff87d7,marker:#ff87d7,spinner:#ff87d7
 "
-
