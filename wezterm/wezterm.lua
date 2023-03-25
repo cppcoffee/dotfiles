@@ -1,3 +1,5 @@
+require('event')
+
 local wezterm = require('wezterm')
 
 wezterm.on('format-tab-title', function(tab)
@@ -22,6 +24,7 @@ return {
             },
         },
     },
+
     color_scheme = 'tokyonight',
     window_frame = {
         font_size = 12.0,
@@ -38,11 +41,13 @@ return {
         saturation = 1.0,
         brightness = 1.4,
     },
+    -- term = 'wezterm',
     default_cursor_style = 'BlinkingBlock',
     -- default_cwd = wezterm.home_dir .. '/workspace',
     clean_exit_codes = { 0, 1, 130 },
     -- exit_behavior = 'Close',
     keys = {
+        { key = 'e', mods = 'CMD', action = wezterm.action({ EmitEvent = 'window-visible-text' }) },
         { key = 'l', mods = 'CMD', action = wezterm.action({ ShowLauncherArgs = { flags = 'DOMAINS' } }) },
         { key = 'w', mods = 'CMD', action = wezterm.action({ CloseCurrentPane = { confirm = false } }) },
         { key = 'd', mods = 'CMD', action = wezterm.action({ SplitHorizontal = { domain = 'CurrentPaneDomain' } }) },
