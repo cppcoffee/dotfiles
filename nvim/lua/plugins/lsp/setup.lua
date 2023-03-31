@@ -60,7 +60,7 @@ return {
                     },
                 },
             },
-            -- clangd = {},
+            clangd = {},
             solc = {},
             bufls = {},
             html = {},
