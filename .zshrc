@@ -53,7 +53,7 @@ alias vi=nvim
 alias vim=nvim
 alias la='exa -alF --icons'
 alias ls='exa -lF --icons'
-alias cat='bat --style=numbers'
+alias cat='bat --style=numbers --theme="Visual Studio Dark+"'
 alias g=git
 alias gti=git
 alias proxy="export https_proxy=http://127.0.0.1:7890;export http_proxy=http://127.0.0.1:7890;export all_proxy=socks5://127.0.0.1:7890"
