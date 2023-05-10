@@ -1,6 +1,5 @@
 return {
-    'folke/neodev.nvim',
+    'adelarsq/image_preview.nvim',
     event = 'VeryLazy',
-    ft = { 'lua' },
     config = true,
 }

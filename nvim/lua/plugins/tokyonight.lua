@@ -6,6 +6,7 @@ return {
         require('tokyonight').load()
     end,
     opts = {
+        -- style = 'night',
         style = 'moon',
     },
 }
