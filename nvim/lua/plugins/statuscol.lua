@@ -1,5 +1,6 @@
 return {
     "luukvbaal/statuscol.nvim",
+    enabled = false,
     opts = function()
         local builtin = require("statuscol.builtin")
         return {
@@ -17,7 +18,7 @@ return {
                     click = "v:lua.ScFa"
                 },
                 {
-                    sign = { name = { ".*" }, maxwidth = 1, colwidth = 1, auto = true },
+                    sign = { name = { ".*" }, maxwidth = 1, colwidth = 2, auto = true },
                     click = "v:lua.ScSa"
                 },
             }

@@ -44,7 +44,7 @@ return {
     -- term = 'wezterm',
     default_cursor_style = 'BlinkingBlock',
     -- default_cwd = wezterm.home_dir .. '/workspace',
-    native_macos_fullscreen_mode = true,
+    -- native_macos_fullscreen_mode = true,
     -- status_update_interval = 5000,
     clean_exit_codes = { 0, 1, 130 },
     -- exit_behavior = 'Close',
