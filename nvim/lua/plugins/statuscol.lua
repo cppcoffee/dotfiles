@@ -17,10 +17,10 @@ return {
                     condition = { builtin.not_empty, true, builtin.not_empty },
                     click = 'v:lua.ScFa'
                 },
-                {
-                    sign = { name = { 'GitSigns' }, maxwidth = 1, colwidth = 1, auto = true },
-                    click = 'v:lua.ScSa'
-                },
+                -- {
+                --     sign = { name = { 'GitSigns' }, maxwidth = 1, colwidth = 1, auto = true },
+                --     click = 'v:lua.ScSa'
+                -- },
             }
         }
     end
