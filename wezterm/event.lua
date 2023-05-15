@@ -35,3 +35,9 @@ wezterm.on('format-tab-title', function(tab)
     end
     return title
 end)
+
+wezterm.on('gui-startup', function()
+    local mux = wezterm.mux
+    local _, _, window = mux.spawn_window {}
+    window:gui_window():maximize()
+end)
