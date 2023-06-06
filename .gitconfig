@@ -20,7 +20,7 @@
 	email = cppcoffee@gmail.com
 
 [core]
-    editor = nvim
+    editor = nvim --clean
     excludesfile = ~/.gitignore_global
 
 [pager]
