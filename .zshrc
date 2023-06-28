@@ -61,6 +61,7 @@ alias noproxy="unset all_proxy https_proxy http_proxy"
 alias q=exit
 
 export GPG_TTY=$(tty)
+export HISTSIZE=10000
 
 export FZF_COMPLETION_TRIGGER='~~'
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS"
