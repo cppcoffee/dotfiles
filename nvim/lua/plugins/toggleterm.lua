@@ -1,11 +1,9 @@
-local map = require('utils').map
-
 return {
     'akinsho/toggleterm.nvim',
     event = 'VeryLazy',
-    init = function()
-        map('t', '<C-]>', [[<C-\><C-n>]], { noremap = true })
-    end,
+    keys = {
+        { mode = { 'n' }, '<C-t>', ':ToggleTerm<CR>' },
+    },
     opts = {
         open_mapping = [[<C-t>]],
         size = function(term)

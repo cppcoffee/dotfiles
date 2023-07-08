@@ -1,7 +1,5 @@
-local map = require('utils').map
 return {
     'nvim-telescope/telescope.nvim',
-    -- keys = { '<leader>ff', '<leader>fg', '<leader>fb', ';' },
     event = 'VeryLazy',
     dependencies = {
         'nvim-lua/plenary.nvim',
@@ -27,10 +25,22 @@ return {
             },
         },
     },
-    init = function()
-        map('n', '<leader>ff', '<cmd>Telescope find_files<cr>')
-        map('n', '<leader>fg', '<cmd>Telescope live_grep<cr>')
-        map('n', '<leader>b', '<cmd>Telescope buffers<cr>')
-        map('n', ';', '<cmd>Telescope commands<cr>')
-    end,
+    keys = {
+        {
+            '<leader>ff',
+            '<cmd>Telescope find_files<cr>',
+        },
+        {
+            '<leader>fg',
+            '<cmd>Telescope live_grep<cr>',
+        },
+        {
+            '<leader>b',
+            '<cmd>Telescope buffers<cr>',
+        },
+        {
+            ';',
+            '<cmd>Telescope commands<cr>',
+        }
+    },
 }

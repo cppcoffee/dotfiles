@@ -1,7 +1,6 @@
 return {
     'junnplus/lsp-setup.nvim',
-    -- branch = 'inlay-hints',
-    -- dir = '~/Documents/workspace/nvim-lsp-setup',
+    -- dir = '/Users/jun/Documents/workspace/nvim-lsp-setup',
     -- event = 'BufRead',
     dependencies = {
         'neovim/nvim-lspconfig',
@@ -12,8 +11,11 @@ return {
     init = function()
         local rounded = { border = 'rounded' }
         vim.diagnostic.config({ float = rounded })
-        vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, rounded)
-        vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, rounded)
+        local with_rounded = function(handler)
+            return vim.lsp.with(handler, rounded)
+        end
+        vim.lsp.handlers['textDocument/hover'] = with_rounded(vim.lsp.handlers.hover)
+        vim.lsp.handlers['textDocument/signatureHelp'] = with_rounded(vim.lsp.handlers.signature_help)
     end,
     opts = {
         mappings = {
@@ -68,12 +70,10 @@ return {
                             compositeLiteralFields = true,
                             compositeLiteralTypes = true,
                             functionTypeParameters = true,
-                        }
+                        },
                     },
                 },
             },
-            clangd = {},
-            solc = {},
             bufls = {},
             html = {},
             lua_ls = {
@@ -97,6 +97,14 @@ return {
                         procMacro = {
                             enable = true,
                         },
+                        inlayHints = {
+                            closureReturnTypeHints = {
+                                enable = true
+                            },
+                        },
+                        cache = {
+                            warmup = false,
+                        }
                     },
                 },
             }

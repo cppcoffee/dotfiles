@@ -21,18 +21,24 @@ return {
     end,
     opts = {
         on_attach = function(bufnr)
-            local map = require('utils').map
+            local function map(mode, l, r, opts)
+                opts = opts or {}
+                opts.buffer = bufnr
+                vim.keymap.set(mode, l, r, opts)
+            end
+
             local api = require('nvim-tree.api')
             api.config.mappings.default_on_attach(bufnr)
-            map('n', '<C-v>', api.node.open.vertical, { buffer = bufnr })
-            map('n', '<C-s>', api.node.open.horizontal, { buffer = bufnr })
-            map('n', 'v', api.node.open.vertical, { buffer = bufnr })
-            map('n', 's', api.node.open.horizontal, { buffer = bufnr })
-            map('n', '<C-t>', ':ToggleTerm<CR>', { buffer = bufnr })
-            map('n', '-', ':lua require("chowcho").run()<CR>', { buffer = bufnr })
-            map('n', '[d', api.node.navigate.diagnostics.prev, { buffer = bufnr })
-            map('n', ']d', api.node.navigate.diagnostics.next, { buffer = bufnr })
-            map('n', 'r', api.fs.rename_sub, { buffer = bufnr })
+            map('n', '<C-v>', api.node.open.vertical)
+            map('n', '<C-s>', api.node.open.horizontal)
+            map('n', 'v', api.node.open.vertical)
+            map('n', 's', api.node.open.horizontal)
+            map('n', '[d', api.node.navigate.diagnostics.prev)
+            map('n', ']d', api.node.navigate.diagnostics.next)
+            -- map('n', 'r', api.fs.rename_sub, { buffer = bufnr })
+
+            map('n', '<C-t>', function() require('toggleterm').toggle() end)
+            map('n', '-', function() require('chowcho').run() end)
         end,
         renderer = {
             indent_markers = {
