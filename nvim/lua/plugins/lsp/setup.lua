@@ -34,6 +34,7 @@ return {
                     }
                 }
             },
+            clangd = {},
             zk = {},
             jsonls = {},
             bashls = {},
