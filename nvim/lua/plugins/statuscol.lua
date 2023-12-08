@@ -11,7 +11,7 @@ return {
                     click = 'v:lua#.ScSa'
                 },
                 { text = { builtin.lnumfunc }, click = 'v:lua.ScLa', },
-                { text = { builtin.foldfunc }, click = 'v:lua.ScFa' },
+                --{ text = { builtin.foldfunc }, click = 'v:lua.ScFa' },
                 {
                     text = { ' ' },
                     condition = { builtin.not_empty, true, builtin.not_empty },
