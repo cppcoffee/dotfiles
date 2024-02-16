@@ -4,12 +4,13 @@ return {
     dependencies = {
         'hrsh7th/cmp-vsnip',
         'hrsh7th/cmp-nvim-lsp',
-        'hrsh7th/vim-vsnip',
-        'hrsh7th/vim-vsnip-integ',
         'hrsh7th/cmp-buffer',
         'onsails/lspkind-nvim',
         'windwp/nvim-autopairs',
+        'hrsh7th/cmp-path',
         'hrsh7th/cmp-cmdline',
+        'hrsh7th/vim-vsnip',
+        'hrsh7th/vim-vsnip-integ',
     },
     config = function()
         local cmp = require('cmp')

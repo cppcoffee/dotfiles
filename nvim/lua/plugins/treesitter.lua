@@ -19,7 +19,7 @@ return {
     opts = {
         ensure_installed = {
             'c', 'lua', 'rust', 'go', 'python',
-            'zig', 'markdown', 'solidity', 'jsonnet', 'vim', 'graphql'
+            'zig', 'markdown', 'vim', 'vimdoc'
         },
         highlight = {
             enable = true,
