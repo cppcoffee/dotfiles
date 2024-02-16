@@ -43,11 +43,6 @@ return {
         renderer = {
             indent_markers = {
                 enable = true,
-                icons = {
-                    item = '|',
-                    edge = '|',
-                    corner = '┗',
-                }
             },
             highlight_git = true,
             highlight_opened_files = 'none',
