@@ -10,7 +10,7 @@ return {
                 icon = '▎',
                 style = 'icon',
             },
-            -- show_buffer_close_icons = false,
+            show_buffer_close_icons = true,
             modified_icon = '✥',
             offsets = {
                 { filetype = 'NvimTree', text = 'File Explorer', text_align = 'center', highlight = 'Directory' },
