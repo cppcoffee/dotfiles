@@ -8,6 +8,10 @@ return {
                 'NvimTree',
                 'toggleterm',
             },
+            bt_ignore = {
+                'nofile',
+                'terminal',
+            },
             relculright = true,
             segments = {
                 {
