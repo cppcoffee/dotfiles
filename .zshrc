@@ -13,7 +13,6 @@ export PATH="$CARGO_PATH/bin:$GOPATH/bin:$PYENV_ROOT/shims:$PATH"
 export PATH="$HOME/.local/bin:${HOME}/.krew/bin:$PATH"
 
 export XDG_CONFIG_HOME="$HOME/.config"
-export ZSH_HIGHLIGHT_MAXLENGTH=60
 
 source ~/.antigen/antigen.zsh
 
@@ -67,6 +66,8 @@ export HISTSIZE=5000
 export SAVEHIST=$HISTSIZE
 setopt EXTENDED_HISTORY
 
+export FZF_BASE=/opt/homebrew/bin/fzf
+export ZSH_HIGHLIGHT_MAXLENGTH=60
 export FZF_COMPLETION_TRIGGER='~~'
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS"
 --height 40%
@@ -76,3 +77,4 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS"
 --color=fg:-1,bg:-1,hl:#5fff87,fg+:-1,bg+:-1,hl+:#ffaf5f
 --color=info:#af87ff,prompt:#5fff87,pointer:#ff87d7,marker:#ff87d7,spinner:#ff87d7
 "
+
