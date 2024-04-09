@@ -94,6 +94,10 @@ return {
                         },
                         cargo = {
                             loadOutDirsFromCheck = true,
+                            buildScripts = {
+                                enable = true,
+                            },
+                            --allFeatures = true,
                         },
                         procMacro = {
                             enable = true,
