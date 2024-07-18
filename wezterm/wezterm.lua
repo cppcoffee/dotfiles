@@ -85,10 +85,6 @@ return {
         {
             regex = [[\b(https|http)://\S*\b]],
             format = '$0',
-        },
-        {
-            regex = [[["]?([\w\d]{1}[-\w\d]+)(/){1}([-\w\d\.]+)["]?]],
-            format = 'https://www.github.com/$1/$3',
         }
     }
 }
