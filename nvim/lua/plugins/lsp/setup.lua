@@ -75,7 +75,6 @@ return {
                     },
                 },
             },
-            bufls = {},
             html = {},
             lua_ls = {
                 settings = {

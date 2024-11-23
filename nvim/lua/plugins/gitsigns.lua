@@ -3,6 +3,13 @@ return {
     event = 'VeryLazy',
     dependencies = { 'nvim-lua/plenary.nvim' },
     opts = {
+        -- signs = {
+        --     add = { text = '▌' },
+        --     change = { text = '▌' },
+        --     delete = { text = '▌' },
+        --     topdelete = { text = '▌' },
+        --     changedelete = { text = '▌' },
+        -- },
         word_diff = false,
         current_line_blame = true,
         linehl = true,

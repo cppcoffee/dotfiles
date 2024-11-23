@@ -5,6 +5,8 @@ return {
         'hrsh7th/cmp-vsnip',
         'hrsh7th/cmp-nvim-lsp',
         'hrsh7th/cmp-buffer',
+        'hrsh7th/vim-vsnip',
+        'hrsh7th/vim-vsnip-integ',
         'onsails/lspkind-nvim',
         'windwp/nvim-autopairs',
         'hrsh7th/cmp-path',
@@ -19,7 +21,9 @@ return {
         local opts = {
             formatting = {
                 format = function(entry, vim_item)
-                    vim_item.kind = require('lspkind').presets.default[vim_item.kind] .. ' ' .. vim_item.kind
+                    if vim_item.kind ~= nil then
+                        vim_item.kind = require('lspkind').presets.default[vim_item.kind] .. ' ' .. vim_item.kind
+                    end
 
                     -- set a name for each source
                     vim_item.menu = ({
