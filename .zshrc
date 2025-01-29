@@ -50,8 +50,8 @@ export CPPFLAGS="-I/opt/homebrew/opt/zlib/include -I/opt/homebrew/opt/openssl@3/
 
 alias vi=nvim
 alias vim=nvim
-alias la='exa -alF --icons'
-alias ls='exa -lF --icons'
+alias la='eza -alF --icons'
+alias ls='eza -lF --icons'
 alias cat='bat --style=numbers --theme="Visual Studio Dark+"'
 alias g=git
 alias gti=git
