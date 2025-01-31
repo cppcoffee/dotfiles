@@ -20,7 +20,7 @@ vim.o.expandtab = true
 vim.o.laststatus = 2
 vim.o.showcmd = true
 vim.o.ruler = true
-vim.o.history = 300
+vim.o.history = 100
 vim.o.backup = false
 vim.o.swapfile = false
 vim.o.foldenable = false
@@ -35,6 +35,9 @@ vim.o.cursorline = true
 vim.o.signcolumn = 'auto:1'
 -- vim.o.cmdheight = 0
 vim.opt.list = true
+vim.opt.lazyredraw = true
+vim.opt.ttyfast = true
+vim.opt.hidden = false
 -- vim.opt.listchars:append('eol:↴')
 -- vim.opt.fillchars:append { diff = '╱' }
 
