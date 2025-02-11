@@ -42,7 +42,6 @@ return {
             clojure_lsp = {},
             dockerls = {},
             jsonnet_ls = {},
-            helm_ls = {},
             zls = {
                 settings = {
                     zls = {
@@ -75,7 +74,6 @@ return {
                     },
                 },
             },
-            html = {},
             lua_ls = {
                 settings = {
                     Lua = {
