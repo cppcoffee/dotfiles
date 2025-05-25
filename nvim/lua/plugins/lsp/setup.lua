@@ -133,29 +133,19 @@ return
             automatic_installation = true,
         })
 
-        local capabilities = vim.lsp.protocol.make_client_capabilities()
-
         local has_cmp_lsp, cmp_lsp = pcall(require, 'cmp_nvim_lsp')
         if has_cmp_lsp then
             capabilities = cmp_lsp.default_capabilities(capabilities)
         end
 
         local lspconfig = require('lspconfig')
+        for server_name, server_opts in pairs(servers) do
+            local opts = vim.tbl_deep_extend("force", {
+                capabilities = capabilities,
+                on_attach = setup_mappings,
+            }, server_opts)
 
-        require('mason-lspconfig').setup_handlers {
-            function(server_name)
-                if servers[server_name] then
-                    local server_opts = servers[server_name] or {}
-                    server_opts.capabilities = capabilities
-
-                    -- 添加自动键位映射的回调
-                    server_opts.on_attach = function(client, bufnr)
-                        setup_mappings(client, bufnr)
-                    end
-
-                    lspconfig[server_name].setup(server_opts)
-                end
-            end
-        }
+            lspconfig[server_name].setup(opts)
+        end
     end
 }
