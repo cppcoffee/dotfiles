@@ -128,10 +128,12 @@ return
             },
         }
 
+        --[[
         require('mason-lspconfig').setup({
             ensure_installed = vim.tbl_keys(servers),
             automatic_installation = true,
         })
+        ]]--
 
         local has_cmp_lsp, cmp_lsp = pcall(require, 'cmp_nvim_lsp')
         if has_cmp_lsp then
