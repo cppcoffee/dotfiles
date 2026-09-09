@@ -14,32 +14,37 @@ export PATH="$HOME/.local/bin:${HOME}/.krew/bin:$PATH"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 
-source ~/.antigen/antigen.zsh
+if [[ -r "$HOME/.antigen/antigen.zsh" ]]; then
+  source "$HOME/.antigen/antigen.zsh"
 
-antigen use oh-my-zsh
-antigen bundle autojump
-antigen bundle vi-mode
-antigen bundle git
-antigen bundle fzf
-antigen bundle pyenv
-antigen bundle pip
-antigen bundle kubectl
-# antigen bundle tmux
-antigen bundle extract
-antigen bundle gitignore
-antigen bundle nvm
+  antigen use oh-my-zsh
+  antigen bundle autojump
+  antigen bundle vi-mode
+  antigen bundle git
+  antigen bundle fzf
+  antigen bundle pyenv
+  antigen bundle pip
+  antigen bundle kubectl
+  # antigen bundle tmux
+  antigen bundle extract
+  antigen bundle gitignore
+  antigen bundle nvm
 
-antigen bundle lukechilds/zsh-nvm
-antigen bundle Aloxaf/fzf-tab
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle z-shell/F-Sy-H --branch=main
-# antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-completions
-antigen bundle dracula/zsh
-antigen bundle dracula/zsh-syntax-highlighting
-antigen bundle Tarrasch/zsh-autoenv
+  antigen bundle lukechilds/zsh-nvm
+  antigen bundle Aloxaf/fzf-tab
+  antigen bundle zsh-users/zsh-autosuggestions
+  antigen bundle z-shell/F-Sy-H --branch=main
+  # antigen bundle zsh-users/zsh-syntax-highlighting
+  antigen bundle zsh-users/zsh-completions
+  antigen bundle dracula/zsh
+  antigen bundle dracula/zsh-syntax-highlighting
+  antigen bundle Tarrasch/zsh-autoenv
 
-antigen apply
+  antigen apply
+fi
+
+bindkey -M viins '^A' beginning-of-line
+bindkey -M viins '^E' end-of-line
 
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
@@ -52,6 +57,7 @@ alias vi=nvim
 alias vim=nvim
 alias la='eza -alF --icons'
 alias ls='eza -lF --icons'
+alias ll='ls -al'
 alias cat='bat --style=numbers --theme="Visual Studio Dark+"'
 alias g=git
 alias gti=git
@@ -77,4 +83,6 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS"
 --color=fg:-1,bg:-1,hl:#5fff87,fg+:-1,bg+:-1,hl+:#ffaf5f
 --color=info:#af87ff,prompt:#5fff87,pointer:#ff87d7,marker:#ff87d7,spinner:#ff87d7
 "
+# Added by Antigravity CLI installer
+export PATH="/Users/sharp/.local/bin:$PATH"
 

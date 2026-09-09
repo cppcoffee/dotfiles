@@ -15,18 +15,15 @@ return {
     cmd = 'Copilot',
     event = 'InsertEnter',
     opts = {
-        -- panel = {
-        --     auto_refresh = true,
-        -- },
-        filetypes = {
-            ['*'] = true,
+        nes = {
+            enabled = false,
         },
         suggestion = {
             auto_trigger = true,
             keymap = {
                 accept = '<C-e>',
-                next = '<C-j>',
-                prev = '<C-k>',
+                next = '<M-]>',
+                prev = '<M-[>',
             }
         }
     }

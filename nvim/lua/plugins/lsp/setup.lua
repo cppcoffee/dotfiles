@@ -15,17 +15,10 @@ return
             }
         })
 
-        vim.lsp.set_log_level('error')
+        vim.lsp.log.set_level('error')
 
         local rounded = { border = 'rounded' }
         vim.diagnostic.config({ float = rounded })
-
-        local with_rounded = function(handler)
-            return vim.lsp.with(handler, rounded)
-        end
-
-        vim.lsp.handlers['textDocument/hover'] = with_rounded(vim.lsp.handlers.hover)
-        vim.lsp.handlers['textDocument/signatureHelp'] = with_rounded(vim.lsp.handlers.signature_help)
 
         local function setup_mappings(client, bufnr)
             local opts = { noremap = true, silent = true, buffer = bufnr }
@@ -34,14 +27,14 @@ return
             vim.keymap.set('n', 'gi', function() require('telescope.builtin').lsp_implementations() end, opts)
             vim.keymap.set('n', 'gr', function() require('telescope.builtin').lsp_references() end, opts)
             vim.keymap.set('n', 'gt', function() require('telescope.builtin').lsp_type_definitions() end, opts)
-            vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-            vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+            vim.keymap.set('n', 'K', function() vim.lsp.buf.hover(rounded) end, opts)
+            vim.keymap.set('n', '<C-k>', function() vim.lsp.buf.signature_help(rounded) end, opts)
             vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
             vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
 
             -- diagnostic
-            vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-            vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+            vim.keymap.set('n', '[d', function() vim.diagnostic.jump({ count = -1, float = true }) end, opts)
+            vim.keymap.set('n', ']d', function() vim.diagnostic.jump({ count = 1, float = true }) end, opts)
             vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, opts)
             vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, opts)
 

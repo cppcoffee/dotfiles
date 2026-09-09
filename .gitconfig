@@ -33,14 +33,15 @@
 #[difftool "difftastic"]
 #    cmd = difft "$LOCAL" "$REMOTE"
 
-[fetch]
-    prune = true
+#[fetch]
+#    prune = true
 
 [sendemail]
 	smtpencryption = tls
 	smtpserver = smtp.gmail.com
 	smtpuser = cppcoffee@gmail.com
 	smtpserverport = 587
+	confirm = auto
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
