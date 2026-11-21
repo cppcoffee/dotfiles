@@ -4,19 +4,22 @@ return {
     opts = function()
         local colors = require('tokyonight.colors').setup()
         return {
-            handle = {
-                cursor = false,
-                color = colors.bg_highlight,
+            exclude = {
+                filetypes = { 'NvimTree', 'TelescopePrompt', 'chatgpt' },
             },
             marks = {
-                Search = { color = colors.orange },
-                Error = { color = colors.error },
-                Warn = { color = colors.warning },
-                Info = { color = colors.info },
-                Hint = { color = colors.hint },
-                Misc = { color = colors.purple },
+                Search = { highlight = { fg = colors.orange } },
+                Error = { highlight = { fg = colors.error } },
+                Warn = { highlight = { fg = colors.warning } },
+                Info = { highlight = { fg = colors.info } },
+                Hint = { highlight = { fg = colors.hint } },
+                Misc = { highlight = { fg = colors.purple } },
             },
-            excluded_filetypes = { 'NvimTree', 'TelescopePrompt', 'chatgpt' }
+            scrollbar = {
+                thumb = {
+                    highlight = { bg = colors.bg_highlight },
+                },
+            },
         }
     end
 }
